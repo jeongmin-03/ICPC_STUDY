@@ -1,0 +1,94 @@
+#step6-1
+
+import java.util.Scanner;
+
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("         ,r'\"7");
+		System.out.println("r`-_   ,'  ,/");
+		System.out.println(" \\. \". L_r'");
+		System.out.println("   `~\\/");
+		System.out.println("      |");
+		System.out.println("      |");
+		
+	}
+}
+
+#step6-2
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int p[] = new int[6];
+		int rp[] = {1,1,2,2,2,8};
+		for(int i=0;i<6;i++) {
+			p[i] = sc.nextInt();
+		}
+		
+		for(int i=0;i<6;i++) {
+			System.out.print(rp[i]-p[i]+" ");
+		}
+	}
+
+#step 6-3
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		
+		for(int i=0 ;i<2*num-1 ;i++) {
+			for(int j=0;j<2*num-1;j++) {
+				if(i<num && num-(i+1)<=j&&num+(i-1)>=j) {
+					System.out.print("*");
+				}else if(i>=num && j>= (i-(num-1))&& j <=(2*num-1)-(i-(num-2))) {
+					System.out.print("*");
+				}if(i<num && num-(i+1)>j) {
+					System.out.print(" ");
+				}else if(i>=num && j< (i-(num-1))) {
+					System.out.print(" ");
+			}
+		}
+			System.out.println("");
+	}
+}
+}
+
+#step6-4
+
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String word= sc.nextLine();
+		int len = word.length();
+		char w[] = new char[len];
+		int t=2003;
+		
+		for(int i=0;i<len;i++) {
+			w[i] = word.charAt(i);
+		}
+		
+		for(int i=0;i<len;i++) {
+			if(w[i] != w[len-i-1]) {
+				t =0;
+				break;
+			}else {
+				t=1;
+			}
+		}
+		System.out.println(t);	
+	}
+}
+
+}
