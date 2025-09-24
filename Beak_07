@@ -1,0 +1,141 @@
+#step7-1
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		
+		int line_1[][] = new int[n][m];
+		int line_2[][] = new int[n][m];
+		
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<m;j++) {
+				line_1[i][j]= sc.nextInt();
+			}
+		}
+		
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<m;j++) {
+				line_2[i][j]= sc.nextInt();
+				line_1[i][j] = line_1[i][j]+line_2[i][j];
+			}
+		}
+		
+		
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<m;j++) {
+				System.out.print(line_1[i][j]+" ");
+			}
+			System.out.println("");
+		}
+		
+	}
+}
+
+#step7-2
+
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		int line[][] = new int[9][9];
+		int max = line[0][0];
+		int m_n=0 , m_m=0;
+		
+		for(int i=0;i<9;i++) {
+			for(int j=0;j<9;j++) {
+				line[i][j]= sc.nextInt();
+			}
+		}
+		
+		for(int i=0;i<9;i++) {
+			for(int j=0;j<9;j++) {
+				if(max<line[i][j]) {
+					max = line[i][j];
+					m_n = i;
+					m_m = j;
+				}
+					
+			}
+		}
+		
+		System.out.println(max);
+		System.out.print((m_n+1)+" "+(m_m+1));
+		
+		
+	}
+}
+
+#step7-3
+
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+	
+		char line[][] = new char[5][15];
+		String str[] = new String[5];
+		
+		
+		for(int i=0;i<5;i++) {
+			str[i] = sc.nextLine();
+		}
+		
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<str[i].length();j++) {
+				line[i][j] = str[i].charAt(j);
+			}
+		}
+		
+		for(int i=0;i<15;i++) {
+			for(int j=0;j<5;j++) {
+				if(line[j][i] != '\u0000')
+				{
+					System.out.print(line[j][i]);
+				}
+			}
+		}
+	}
+}
+
+
+#step7-4
+
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int num = sc.nextInt();
+		int area_sum = 0;
+		int paper_num[][] = new int[100][100];
+		
+		for(int i=0;i<num;i++) {
+			int h = sc.nextInt();
+			int w = sc.nextInt();
+			
+			for(int k=h;k<h+10;k++) {
+				for(int kk=w;kk<w+10;kk++) {
+					paper_num[k][kk] =1;
+				}
+			}
+		}
+		for(int i=0;i<100;i++) {
+			for(int j=0;j<100;j++) {
+				area_sum = area_sum + paper_num[i][j];
+			}
+		}
+		System.out.println(area_sum);		
+	}
+}
