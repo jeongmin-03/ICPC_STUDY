@@ -227,6 +227,26 @@ public class Main {
 }
 
 
+#################################################해리님 풀이#########################################################################
+
+/* N 2941  - 향상된 for문 사용 
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String input = br.readLine();
+
+        String[] croa = {"dz=", "c=", "c-", "d-", "lj", "nj", "s=", "z="};
+        for (String p : croa){
+            input = input.replace(p,"*");
+        }
+        // 향상된 for문 이용 
+        // 애초에 크로아티아어가 감지되면 바로 *(한글자)로 치환
+
+        System.out.println(input.length());
+    } */
+
+######################################################################################################################################
+
+
 #step6-7
 
 public class Main {
