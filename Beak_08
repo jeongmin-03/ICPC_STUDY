@@ -1,0 +1,254 @@
+#step 8-1
+import java.util.Scanner;
+import java.lang.Math;
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String str = sc.next();
+		int num = sc.nextInt();
+		char c;
+		int number;
+		int len = str.length();
+		int result=0;
+		
+		for(int i=0;i<str.length();i++) {
+			c = str.charAt(i);
+			if(c>=48 && c<=57) {
+				number = c - 48;
+			}else {
+				number = c - 55;
+			}
+			result = result + (int) (number* Math.pow(num, len-1));
+			len--;
+		}
+		System.out.println(result);	
+	}
+}
+
+#step 8-2
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+import java.lang.Math;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+
+public class Main {
+	public static void main(String[] args) throws IOException{
+		
+	
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		String s = bf.readLine();
+		StringTokenizer st = new StringTokenizer(s);
+		
+		int num = Integer.parseInt(st.nextToken());
+		int numeral_sys = Integer.parseInt(st.nextToken());
+		char c[] = new char[1000000];
+		int i = 0;
+		
+		
+		while(true) {
+			if((num % numeral_sys)>=0 && (num % numeral_sys)<= 9)
+			{
+				c[i] = (char)(48+(num % numeral_sys));
+			}else {				
+				c[i] = (char)('A'+(num % numeral_sys)-10);
+			}
+			i++;
+			num = num / numeral_sys;
+			
+			if(num ==0)
+				break;
+		}
+		
+		for(int j = i-1;j>=0;j--) {
+			bw.write(c[j]);
+		}
+		bw.flush();
+		bw.close();
+	}
+}
+
+#step 8-3
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		
+		for(int i=0;i<num;i++) {
+			int money = sc.nextInt();
+			if(money/25 != 0 )
+				System.out.print((money/25)+" ");
+			else
+				System.out.print("0 ");
+			money = money % 25;
+			
+			if(money/10 != 0 )
+				System.out.print((money/10)+" ");
+			else
+				System.out.print("0 ");
+			money = money % 10;
+			
+			if(money/5 != 0 )
+				System.out.print((money/5)+" ");
+			else
+				System.out.print("0 ");
+			money = money % 5;
+			
+			if(money/1 != 0 )
+				System.out.print((money/1)+" ");
+			else
+				System.out.print("0");
+			money = money % 1;
+            
+            System.out.println("");
+		}
+	}
+}
+
+#step 8-4
+
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		int f = 2;
+		int result=0;
+		
+		for(int i=0;i<num;i++) {
+			f = f+(f-1);
+			
+			result = f*f;
+		}
+		System.out.println(result);
+	}
+}
+
+#step 8-5
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		int num = Integer.parseInt(bf.readLine());
+		int i =2, j = 7;
+		
+	
+		while(j<num) {
+			j = j+6*i;
+			i++;
+		}
+		
+		if(num ==1)
+			bw.write("1");
+		else
+			bw.write(String.valueOf(i));
+		bw.flush();
+		bw.close();
+	}
+}
+
+#step 8-6
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int num = Integer.parseInt(bf.readLine());
+		int fine =1, count =1;
+		int p,s;
+		
+		while(num>fine) {
+			fine = fine + count;
+			count++;
+		}
+		
+		int key = fine-count;
+		
+		if((count-1)%2==0) {
+			p = count -1;
+			s = 1;
+			for(int i=0;i<num-key-1;i++) {
+				p--;
+				s++;
+			}
+		}else{
+			s = count -1;
+			p =1;
+			for(int i=0;i<num-key-1;i++) {
+				p++;
+				s--;
+			}
+		}
+		
+		if(p==0) {
+			p = 1;
+		}else if(s==0) {
+			s = 1;
+		}
+		
+		bw.write(String.valueOf(s)+"/"+String.valueOf(p));
+		bw.flush();
+		bw.close();
+		
+		
+	}
+}
+
+#step 8-8
+****이거 틀렸는데 이게 제 최선이라서 일단 코드만 붙여놓겠습니다 ! 더 고민하다가 금요일 전까지 풀리면 다시 업로드 하겠습니다 ㅜㅜ****
+public class Level1 {
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		StringTokenizer st = new StringTokenizer(bf.readLine());
+        int a = Integer.parseInt(st.nextToken()); 
+        int b = Integer.parseInt(st.nextToken()); 
+        int v = Integer.parseInt(st.nextToken()); 
+		int count =0;
+		int day_v=0;
+		
+		while(true) {
+			day_v = a-b+ day_v;
+			count++;
+			if(v-day_v<=a) {
+				break;
+			}
+		}
+		
+		bw.write(String.valueOf(count+1));
+		bw.flush();
+		bw.close();
+		
+		
+	}
+}
